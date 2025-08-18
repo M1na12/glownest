@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GlowNest - Natural Skincare</title>
+    <meta name="description"
+        content="GlowNest - gentle, minimal routines for healthy, radiant skin. Tips, treatments and products that truly work.">
+    <link rel="icon" href="./slike/favicon.png" type="image/png">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome (use this free CDN instead of kit ID) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Slick Carousel CDN for jQuery plugin (CSS and JS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="ispit.css">
+</head>
+
+<body>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="glow-logo">GlowNest</div>
+    </div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">GlowNest</div>
+        <nav>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="nav-links"
+                aria-expanded="false">&#9776;</button>
+            <ul class="nav-links" role="menu" id="nav-links">
+                <li><a href="ispit.html#home" role="menuitem">Home</a></li>
+                <li><a href="about.html" role="menuitem" aria-current="page">About Me</a></li>
+                <li><a href="ispit.html#services" role="menuitem">Services</a></li>
+                <li><a href="ispit.html#products" role="menuitem">Gallery</a></li>
+                <li><a href="ispit.html#testimonials" role="menuitem">FAQ</a></li>
+                <li><a href="ispit.html#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ABOUT ME -->
+    <section id="about-me" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-desc">Get to know the person behind GlowNest and my journey in skincare and web
+                development.</p>
+            <div class="about-me-content">
+                <img class="profile card" src="./slike/me.jpeg" alt="Mina — GlowNest creator" loading="lazy">
+                <div class="card">
+                    <h3>Hi, I’m Mina!</h3>
+                    <p>I’m from Raška, Serbia, and currently a second-year student at ICT College in Belgrade, majoring
+                        in Information Technologies. My index number is 75/23.</p>
+                    <ul>
+                        <li>📍 <strong>Hometown:</strong> Raška, Serbia</li>
+                        <li>🏫 <strong>School:</strong> ICT College of Vocational Studies, Belgrade – Information
+                            Technologies (2nd year)</li>
+                        <li>💻 <strong>Project:</strong> GlowNest is my college project to demonstrate my skills in
+                            HTML, CSS, and JavaScript, while combining my interest in skincare with web design.</li>
+                    </ul>
+
+                    <a href="documentation.pdf" class="cta" target="_blank" aria-label="View project documentation">View
+                        Project Documentation
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 5L20 12L13 19" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4 12H20" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div>© <span id="year"></span> Glow & Care. Sva prava zadržana.</div>
+            <div class="social">
+                <a class="icon" href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="https://www.instagram.com/">
+                        <rect x="2" y="2" width="20" height="20" rx="6" stroke="#d84a78" stroke-width="2" />
+                        <circle cx="12" cy="12" r="4" stroke="#d84a78" stroke-width="2" />
+                        <circle cx="17.5" cy="6.5" r="1.2" fill="#d84a78" />
+                    </svg>
+                </a>
+                <a class="icon" href="#" aria-label="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="https://www.tiktok.com/">
+                        <path d="M15 3v5.5a5.5 5.5 0 11-5.5 5.5V9" stroke="#d84a78" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a class="icon" href="#" aria-label="YouTube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="https://www.youtube.com/">
+                        <rect x="2" y="7" width="20" height="10" rx="3" stroke="#d84a78" stroke-width="2" />
+                        <path d="M10 10l5 2-5 2v-4z" fill="#d84a78" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+    <!-- Main script -->
+    <script src="ispit.js"></script>
+</body>
+
+</html>

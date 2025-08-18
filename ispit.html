@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GlowNest - Natural Skincare</title>
+  <meta name="description"
+    content="GlowNest - gentle, minimal routines for healthy, radiant skin. Tips, treatments and products that truly work.">
+  <link rel="icon" href="./slike/favicon.png" type="image/png">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&family=Quicksand:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome (use this free CDN instead of kit ID) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- Slick Carousel CDN for jQuery plugin (CSS and JS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="ispit.css">
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="glow-logo">GlowNest</div>
+  </div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">GlowNest</div>
+    <nav>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="nav-links"
+        aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" role="menu" id="nav-links">
+        <li><a href="#home" role="menuitem">Home</a></li>
+        <li><a href="about.html" role="menuitem">About Me</a></li>
+        <li><a href="#services" role="menuitem">Services</a></li>
+        <li><a href="#products" role="menuitem">Gallery</a></li>
+        <li><a href="#testimonials" role="menuitem">FAQ</a></li>
+        <li><a href="#contact" role="menuitem">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <span class="badge">Natural skincare • No filters</span>
+      <h1 class="headline">Your <span class="typed" id="typed"></span></h1>
+      <p class="sub">Welcome to a space where skincare is simple, gentle, and effective. Discover routines and products
+        that truly deliver results.</p>
+      <a href="#about" class="cta">Discover More
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 5L20 12L13 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4 12H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+    <a class="scroll-arrow" href="#about" aria-label="Scroll down">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9l6 6 6-6" stroke="#d84a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
+  </header>
+  <main id="main">
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <div class="container">
+        <h2 class="section-title">About GlowNest</h2>
+        <p class="section-desc">Hi, I’m Mina — passionate about dermatology, formulation, and the confidence that comes
+          from healthy skin. I share proven tips and minimal routines that actually work.</p>
+        <div class="about">
+          <img class="profile card" src="./slike/skin.jpeg" alt="Mina — skincare creator" loading="lazy">
+          <div class="card">
+            <h3>Why I Created GlowNest</h3>
+            <p>I started learning about skin a few years ago while struggling with acne and scars. Through research,
+              courses, and working with professionals, I realized that less is often more. My mission is to show you how
+              to build a skincare routine that is truly <em>yours</em> — simple, consistent, and gentle.</p>
+            <ul>
+              <li>✨ Minimalist routines for every skin type</li>
+              <li>🧪 Understanding ingredients like
+                <span class="ingredient" data-info="Exfoliates dead skin cells">AHA</span>,
+                <span class="ingredient" data-info="Boosts cell turnover">retinoids</span>,
+                <span class="ingredient" data-info="Soothes & brightens">niacinamide</span>
+              </li>
+              <li>🌸 Focus on skin barrier & glow from within</li>
+            </ul>
+            <p class="signature-quote">“Glow isn’t just about skin — it’s how you feel when you look in the mirror.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="tooltip" class="tooltip"></div>
+    <!-- SERVICES -->
+    <section id="services" class="section reveal">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card" data-service="HydraFacial">
+          <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3>HydraFacial</h3>
+          <p>Deep hydration and skin renewal for instant glow.</p>
+          <button class="service-more" aria-expanded="false">Learn More</button>
+          <div class="service-details">
+            <p>A non-invasive treatment that cleanses, exfoliates, and hydrates your skin, leaving it radiant and
+              refreshed.</p>
+          </div>
+        </div>
+        <div class="service-card" data-service="Teen Glow">
+          <div class="service-icon"><i class="fa-solid fa-child-reaching"></i></div>
+          <h3>Teen Glow</h3>
+          <p>Gentle routines for young skin, education & prevention.</p>
+          <button class="service-more" aria-expanded="false">Learn More</button>
+          <div class="service-details">
+            <p>Special protocols for teens with mild products and education for healthy habits and prevention of future
+              issues.</p>
+          </div>
+        </div>
+        <div class="service-card" data-service="Glow Boost">
+  <div class="service-icon"><i class="fa-solid fa-cat"></i></div>
+  <h3>Glow Boost</h3>
+  <p>Quick treatment for instant radiance & vitality.</p>
+  <button class="service-more" aria-expanded="false">Learn More</button>
+  <div class="service-details">
+    <p>Glow Boost instantly enhances your skin’s natural radiance with fast and effective results.</p>
+  </div>
+</div>
+      </div>
+    </section>
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+      <div class="container reveal">
+        <h2 class="section-title">Products We Love</h2>
+        <p class="section-desc">Hand-picked essentials for cleansing, hydration, and protection. Lightweight textures,
+          smart formulas, and results without irritation.</p>
+        <div class="product-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Cleanser">Cleanser</button>
+          <button class="filter-btn" data-filter="Hydration">Hydration</button>
+          <button class="filter-btn" data-filter="Serums">Serums</button>
+          <button class="filter-btn" data-filter="Protection">Protection</button>
+          <button class="filter-btn" data-filter="Night Care">Night Care</button>
+          <button class="filter-btn" data-filter="Balance">Balance</button>
+        </div>
+        <div class="products-grid" style="margin-top:1rem">
+          <article class="product" data-category="Cleanser">
+            <div class="product-image">
+              <img src="./slike/cleasinggel.jpeg" alt="Cleansing gel" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="cloud-gel">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Cleanser</span>
+              <h3>“Cloud Gel” Face Wash</h3>
+              <p>Gently removes impurities without tightness. With betaine & panthenol.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Hydration">
+            <div class="product-image">
+              <img src="./slike/moisturizer.jpeg" alt="Moisturizer" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="silk-barrier">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Hydration</span>
+              <h3>“Silk Barrier” Cream</h3>
+              <p>Niacinamide + ceramides to restore barrier and lock in lasting moisture.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Serums">
+            <div class="product-image">
+              <img src="./slike/vitaminc.jpeg" alt="Vitamin C serum" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="morning-glow">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Serums</span>
+              <h3>“Morning Glow” Vitamin C</h3>
+              <p>Stable 10% formula for an even skin tone and extra radiance.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Protection">
+            <div class="product-image">
+              <img src="./slike/spf.jpeg" alt="SPF" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="feather-shield">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Protection</span>
+              <h3>“Feather Shield” SPF 50</h3>
+              <p>No white cast, lightweight, and perfect for daily wear.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Night Care">
+            <div class="product-image">
+              <img src="./slike/retinol.jpeg" alt="Retinol serum" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="reset-retinol">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Night Care</span>
+              <h3>“Reset” Retinol 0.2%</h3>
+              <p>Gently introduces retinoids for smooth, clear skin without irritation.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Balance">
+            <div class="product-image">
+              <img src="./slike/toner.jpeg" alt="Toner" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="rose-dew">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Balance</span>
+              <h3>“Rose Dew” Toner</h3>
+              <p>With hyaluronic acid and rose water for plump, refreshed skin.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Cleanser">
+            <div class="product-image">
+              <img src="./slike/Pure Cleansing Oil.jpeg" alt="Cleansing Oil" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="cloud-gel">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Cleanser</span>
+              <h3>“Velvet Cleanse” Oil</h3>
+              <p>Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Hydration">
+            <div class="product-image">
+              <img src="./slike/cream.jpeg" alt="Hydra Veil Moisturizer" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="hydra-veil">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Hydration</span>
+              <h3>“Hydra Veil” Moisturizer</h3>
+              <p>Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Serums">
+            <div class="product-image">
+              <img src="./slike/serum.jpeg" alt="Radiant Bloom Serum" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="radiant-bloom">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Serums</span>
+              <h3>“Radiant Bloom” Serum</h3>
+              <p>Peptides + ferulic acid to boost collagen and enhance skin’s glow.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Protection">
+            <div class="product-image">
+              <img src="./slike/spf1.jpeg" alt="Luminous Guard SPF 50" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="luminous-guard">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Protection</span>
+              <h3>“Luminous Guard” SPF 50</h3>
+              <p>Broad-spectrum protection with a sheer finish, ideal for all skin tones.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Night Care">
+            <div class="product-image">
+              <img src="./slike/night.jpeg" alt="Night Renew Serum" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="night-renew">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Night Care</span>
+              <h3>“Night Renew” Serum</h3>
+              <p>Bakuchiol + peptides to promote skin renewal and reduce fine lines.</p>
+            </div>
+          </article>
+          <article class="product" data-category="Balance">
+            <div class="product-image">
+              <img src="./slike/crystal.jpeg" alt="Crystal Mist Toner" loading="lazy" />
+              <div class="product-overlay">
+                <button class="quick-view" data-product="crystal-mist">Quick View</button>
+              </div>
+            </div>
+            <div class="info">
+              <span class="tag">Balance</span>
+              <h3>“Crystal Mist” Toner</h3>
+              <p>Witch hazel + chamomile to balance and soothe for a refreshed complexion.</p>
+            </div>
+          </article>
+        </div>
+        <!-- Quick View Modal -->
+        <div id="quick-view-modal" class="modal">
+          <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="quick-view-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section reveal">
+      <div class="container t-wrap">
+        <h2 class="section-title">What Our Community Says</h2>
+        <p class="section-desc">Real experiences from readers who tried our routines and products.</p>
+        <div class="carousel" aria-roledescription="carousel">
+          <div class="track" id="t-track">
+            <div class="testimonial reveal">
+              <div class="t-card">
+                <div class="t-head">
+                  <img class="avatar"
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&h=300&fit=crop" alt="Ana">
+                  <div>
+                    <div class="name">Ana</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <p>"After three weeks on the acne routine, my skin feels calmer and glowy. Thank you, Mina!"</p>
+              </div>
+            </div>
+            <div class="testimonial reveal">
+              <div class="t-card">
+                <div class="t-head">
+                  <img class="avatar"
+                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=300&h=300&fit=crop"
+                    alt="Milica" />
+                  <div>
+                    <div class="name">Milica</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <p>"Best SPF I’ve ever tried — no stinging, blends perfectly with makeup."</p>
+              </div>
+            </div>
+            <div class="testimonial reveal">
+              <div class="t-card">
+                <div class="t-head">
+                  <img class="avatar"
+                    src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=300&h=300&fit=crop"
+                    alt="Jovana" />
+                  <div>
+                    <div class="name">Jovana</div>
+                    <div class="stars">★★★★☆</div>
+                  </div>
+                </div>
+                <p>"The ingredients guide opened my eyes — I shop smarter now, and my skin is grateful."</p>
+              </div>
+            </div>
+            <div class="testimonial reveal">
+              <div class="t-card">
+                <div class="t-head">
+                  <img class="avatar"
+                    src="https://images.unsplash.com/photo-1542345812-d98b5cd6cf98?q=80&w=300&h=300&fit=crop"
+                    alt="Tamara" />
+                  <div>
+                    <div class="name">Tamara</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <p>"Simple, clear, and gentle on the skin. My routine is finally consistent."</p>
+              </div>
+            </div>
+            <div class="testimonial reveal">
+              <div class="t-card">
+                <div class="t-head">
+                  <img class="avatar"
+                    src="https://images.unsplash.com/photo-1545996124-0501ebae84d0?q=80&w=300&h=300&fit=crop"
+                    alt="Nina" />
+                  <div>
+                    <div class="name">Nina</div>
+                    <div class="stars">★★★★★</div>
+                  </div>
+                </div>
+                <p>"The recommendations are truly tested — everything is gentle yet effective."</p>
+              </div>
+            </div>
+            <div class="testimonial reveal">
+              <div class="t-card">
+                <div class="t-head">
+                  <img class="avatar"
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=300&h=300&fit=crop"
+                    alt="Ivana" />
+                  <div>
+                    <div class="name">Ivana</div>
+                    <div class="stars">★★★★☆</div>
+                  </div>
+                </div>
+                <p>"The retinol guide saved me from irritation. Amazing content!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="t-nav">
+          <button class="btn-nav" id="prev" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18l-6-6 6-6" stroke="#d84a78" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="btn-nav" id="next" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18l6-6-6-6" stroke="#d84a78" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <div class="container contact">
+        <form class="form" id="contactForm">
+          <h2 class="section-title" style="text-align:left">Contact</h2>
+          <p class="section-desc" style="text-align:left; margin-bottom:1rem">Write to me for recommendations or
+            collaborations. I'll reply as soon as possible.</p>
+          <div class="row">
+            <div class="field">
+              <input id="firstName" name="firstName" type="text" required>
+              <label for="firstName">First Name</label>
+            </div>
+            <div class="field">
+              <input id="lastName" name="lastName" type="text" required>
+              <label for="lastName">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <input id="email" name="email" type="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="field">
+              <input id="phone" name="phone" type="tel" required>
+              <label for="phone">Phone Number</label>
+            </div>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" required></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button class="send" type="submit">Send Message</button>
+          <div class="success" id="successMsg" aria-hidden="true">Thank you! Your message has been sent ✨</div>
+        </form>
+        <div id="contact-info" class="contact-card">
+          <h2>Where to Find Me</h2>
+          <ul>
+            <li>📧 <a href="mailto:hello@glowandcare.rs">hello@glowandcare.rs</a></li>
+            <li>📍 <a href="https://www.google.com/maps?q=Belgrade,+Serbia" target="_blank">Belgrade, Serbia</a></li>
+            <li>⏰ <span id="working-hours" title="Mon–Fri: 10am–6pm">Hover for hours</span></li>
+          </ul>
+          <form id="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p id="newsletter-message" aria-hidden="true"></p>
+        </div>
+      </div>
+    </section>
+    <!-- SKINCARE QUIZ -->
+    <section id="quiz" class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Find Your Perfect Routine</h2>
+    <p class="section-desc">Answer two simple questions to discover personalized product recommendations for your skin.</p>
+    <div class="quiz-card">
+      <form id="skin-quiz" class="quiz-form">
+        <div class="field quiz-field">
+          <label for="skin-type" class="quiz-label">What is your skin type?</label>
+          <div class="select-wrapper">
+            <select id="skin-type" class="quiz-select" required>
+              <option value="" disabled selected>Select skin type</option>
+              <option value="oily">Oily</option>
+              <option value="dry">Dry</option>
+              <option value="combination">Combination</option>
+              <option value="sensitive">Sensitive</option>
+            </select>
+            <span class="select-icon">▼</span>
+          </div>
+        </div>
+        <div class="field quiz-field">
+          <label for="concern" class="quiz-label">What’s your main skin concern?</label>
+          <div class="select-wrapper">
+            <select id="concern" class="quiz-select" required>
+              <option value="" disabled selected>Select concern</option>
+              <option value="acne">Acne</option>
+              <option value="dryness">Dryness</option>
+              <option value="dullness">Dullness</option>
+              <option value="aging">Aging</option>
+            </select>
+            <span class="select-icon">▼</span>
+          </div>
+        </div>
+        <button class="send quiz-button" type="submit">Get Your Recommendations</button>
+        <div id="quiz-result" class="success quiz-result" aria-hidden="true"></div>
+      </form>
+    </div>
+  </div>
+</section>
+  </main>
+  <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+            <div>© <span id="year"></span> Glow & Care. Sva prava zadržana.</div>
+            <div class="social">
+                <a class="icon" href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="https://www.instagram.com/">
+                        <rect x="2" y="2" width="20" height="20" rx="6" stroke="#d84a78" stroke-width="2" />
+                        <circle cx="12" cy="12" r="4" stroke="#d84a78" stroke-width="2" />
+                        <circle cx="17.5" cy="6.5" r="1.2" fill="#d84a78" />
+                    </svg>
+                </a>
+                <a class="icon" href="#" aria-label="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="https://www.tiktok.com/">
+                        <path d="M15 3v5.5a5.5 5.5 0 11-5.5 5.5V9" stroke="#d84a78" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a class="icon" href="#" aria-label="YouTube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="https://www.youtube.com/">
+                        <rect x="2" y="7" width="20" height="10" rx="3" stroke="#d84a78" stroke-width="2" />
+                        <path d="M10 10l5 2-5 2v-4z" fill="#d84a78" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <!-- Main script -->
+  <script src="ispit.js"></script>
+</body>
+
+</html>
