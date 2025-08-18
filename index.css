@@ -1068,7 +1068,37 @@ footer {
   text-align: center;
   animation: fadeIn 0.4s ease;
 }
+/* Responsive za mobilne uređaje */
+@media only screen and (max-width: 480px) {
+  .products-grid {
+    display: grid !important; 
+    grid-template-columns: 1fr; 
+    gap: 16px;
+    width: 100%; 
+    margin: 16px auto;
+    padding: 0 16px; 
+  }
 
+  .product {
+    display: block !important; 
+    width: 100%;
+    max-width: 100%;
+    height: auto; 
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+  }
+
+  .product-overlay {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    opacity: 1; 
+  }
+}
 
 @media (max-width: 640px) {
   .quiz-card {
@@ -1079,3 +1109,4 @@ footer {
     font-size: 1rem;
   }
 }
+
