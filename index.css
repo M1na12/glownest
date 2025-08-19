@@ -133,7 +133,6 @@ h1, h2, h3 {
   background-image: url('./slike/background.jpeg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   padding: 120px 20px;
   color: #fff;
   text-align: center;
@@ -1109,3 +1108,4 @@ footer {
     opacity: 1; 
   }
 }
+
