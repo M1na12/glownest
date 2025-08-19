@@ -130,7 +130,7 @@ h1, h2, h3 {
 
 /* ===== HERO ===== */
 .hero {
-  background-image: url('./slike/background.jpeg');
+ background-image: url('./slike/background.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -138,11 +138,11 @@ h1, h2, h3 {
   color: #fff;
   text-align: center;
   position: relative;
-  min-height: 97vh;
+  min-height: 600px; 
   display: grid;
   place-items: center;
   overflow: hidden;
-  width:100%;
+  width: 100%;
 }
 
 .hero::before {
@@ -1131,6 +1131,7 @@ footer {
     text-align: center; 
   }
 }
+
 
 
 
