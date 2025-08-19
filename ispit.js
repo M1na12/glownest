@@ -97,33 +97,46 @@ if (backToTop) {
     });
   });
 }
-$(document).ready(function() {
   
+$(document).ready(function() {
+  let $grid = $('.products-grid');
+
+  // Inicijalizacija Slick Carousel
+  $grid.slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
+  });
+
+  // Filtriranje proizvoda
   $('.filter-btn').on('click', function() {
     let filterValue = $(this).data('filter');
+    $grid.slick('unslick'); // Ukloni Slick pre filtriranja
 
     if (filterValue === 'all') {
-      $('.product').show(); 
+      $('.product').show();
     } else {
-      $('.product').hide(); 
-      $('.product[data-category="' + filterValue + '"]').show(); 
+      $('.product').hide();
+      $('.product[data-category="' + filterValue + '"]').show();
     }
 
- 
+    $grid.slick(); // Ponovo inicijalizuj Slick sa filtriranim elementima
+
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
   });
-});
-
-
-  $('.product').hover(
-    function() {
-      $(this).addClass('product-hover');
-    },
-    function() {
-      $(this).removeClass('product-hover');
-    }
-  );
 });
 
 // ===== SCROLL REVEAL =====
@@ -431,3 +444,4 @@ window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 
 });
+
