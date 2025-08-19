@@ -133,177 +133,162 @@
       </div>
     </section>
     <!-- PRODUCTS -->
-    <section class="section" id="products">
-      <div class="container reveal">
-        <h2 class="section-title">Products We Love</h2>
-        <p class="section-desc">Hand-picked essentials for cleansing, hydration, and protection. Lightweight textures,
-          smart formulas, and results without irritation.</p>
-        <div class="product-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="Cleanser">Cleanser</button>
-          <button class="filter-btn" data-filter="Hydration">Hydration</button>
-          <button class="filter-btn" data-filter="Serums">Serums</button>
-          <button class="filter-btn" data-filter="Protection">Protection</button>
-          <button class="filter-btn" data-filter="Night Care">Night Care</button>
-          <button class="filter-btn" data-filter="Balance">Balance</button>
+   <section class="section products" id="products">
+  <div class="container">
+    <h2 class="section-title">Products We Love</h2>
+    <p class="section-desc">Hand-picked essentials for cleansing, hydration, and protection. Lightweight textures, smart formulas, and results without irritation.</p>
+    <div class="product-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Cleanser">Cleanser</button>
+      <button class="filter-btn" data-filter="Hydration">Hydration</button>
+      <button class="filter-btn" data-filter="Serums">Serums</button>
+      <button class="filter-btn" data-filter="Protection">Protection</button>
+      <button class="filter-btn" data-filter="Night Care">Night Care</button>
+      <button class="filter-btn" data-filter="Balance">Balance</button>
+    </div>
+    <div class="products-grid">
+      <div class="product" data-category="Cleanser">
+        <div class="product-image"><img src="./slike/cleasinggel.jpeg" alt="Cleansing gel"></div>
+        <div class="info">
+          <span class="tag">Cleanser</span>
+          <h3>“Cloud Gel” Face Wash</h3>
+          <p>Gently removes impurities without tightness. With betaine & panthenol.</p>
         </div>
-        <div class="products-grid" style="margin-top:1rem">
-          <article class="product" data-category="Cleanser">
-            <div class="product-image">
-              <img src="./slike/cleasinggel.jpeg" alt="Cleansing gel" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="cloud-gel">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Cleanser</span>
-              <h3>“Cloud Gel” Face Wash</h3>
-              <p>Gently removes impurities without tightness. With betaine & panthenol.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Hydration">
-            <div class="product-image">
-              <img src="./slike/moisturizer.jpeg" alt="Moisturizer" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="silk-barrier">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Hydration</span>
-              <h3>“Silk Barrier” Cream</h3>
-              <p>Niacinamide + ceramides to restore barrier and lock in lasting moisture.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Serums">
-            <div class="product-image">
-              <img src="./slike/vitaminc.jpeg" alt="Vitamin C serum" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="morning-glow">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Serums</span>
-              <h3>“Morning Glow” Vitamin C</h3>
-              <p>Stable 10% formula for an even skin tone and extra radiance.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Protection">
-            <div class="product-image">
-              <img src="./slike/spf.jpeg" alt="SPF" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="feather-shield">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Protection</span>
-              <h3>“Feather Shield” SPF 50</h3>
-              <p>No white cast, lightweight, and perfect for daily wear.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Night Care">
-            <div class="product-image">
-              <img src="./slike/retinol.jpeg" alt="Retinol serum" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="reset-retinol">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Night Care</span>
-              <h3>“Reset” Retinol 0.2%</h3>
-              <p>Gently introduces retinoids for smooth, clear skin without irritation.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Balance">
-            <div class="product-image">
-              <img src="./slike/toner.jpeg" alt="Toner" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="rose-dew">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Balance</span>
-              <h3>“Rose Dew” Toner</h3>
-              <p>With hyaluronic acid and rose water for plump, refreshed skin.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Cleanser">
-            <div class="product-image">
-              <img src="./slike/Pure Cleansing Oil.jpeg" alt="Cleansing Oil" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="cloud-gel">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Cleanser</span>
-              <h3>“Velvet Cleanse” Oil</h3>
-              <p>Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Hydration">
-            <div class="product-image">
-              <img src="./slike/cream.jpeg" alt="Hydra Veil Moisturizer" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="hydra-veil">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Hydration</span>
-              <h3>“Hydra Veil” Moisturizer</h3>
-              <p>Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Serums">
-            <div class="product-image">
-              <img src="./slike/serum.jpeg" alt="Radiant Bloom Serum" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="radiant-bloom">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Serums</span>
-              <h3>“Radiant Bloom” Serum</h3>
-              <p>Peptides + ferulic acid to boost collagen and enhance skin’s glow.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Protection">
-            <div class="product-image">
-              <img src="./slike/spf1.jpeg" alt="Luminous Guard SPF 50" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="luminous-guard">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Protection</span>
-              <h3>“Luminous Guard” SPF 50</h3>
-              <p>Broad-spectrum protection with a sheer finish, ideal for all skin tones.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Night Care">
-            <div class="product-image">
-              <img src="./slike/night.jpeg" alt="Night Renew Serum" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="night-renew">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Night Care</span>
-              <h3>“Night Renew” Serum</h3>
-              <p>Bakuchiol + peptides to promote skin renewal and reduce fine lines.</p>
-            </div>
-          </article>
-          <article class="product" data-category="Balance">
-            <div class="product-image">
-              <img src="./slike/crystal.jpeg" alt="Crystal Mist Toner" loading="lazy" />
-              <div class="product-overlay">
-                <button class="quick-view" data-product="crystal-mist">Quick View</button>
-              </div>
-            </div>
-            <div class="info">
-              <span class="tag">Balance</span>
-              <h3>“Crystal Mist” Toner</h3>
-              <p>Witch hazel + chamomile to balance and soothe for a refreshed complexion.</p>
-            </div>
-          </article>
+      </div>
+      <div class="product" data-category="Hydration">
+        <div class="product-image"><img src="./slike/silkbarrier.jpeg" alt="Silk Barrier Cream"></div>
+        <div class="info">
+          <span class="tag">Hydration</span>
+          <h3>“Silk Barrier” Cream</h3>
+          <p>Niacinamide + ceramides to restore barrier and lock in lasting moisture.</p>
+        </div>
+      </div>
+      <div class="product" data-category="Serums">
+        <div class="product-image"><img src="./slike/morningglow.jpeg" alt="Morning Glow Vitamin C"></div>
+        <div class="info">
+          <span class="tag">Serums</span>
+          <h3>“Morning Glow” Vitamin C</h3>
+          <p>Stable 10% formula for an even skin tone and extra radiance.</p>
+        </div>
+      </div>
+         <div class="products-grid">
+      <article class="product" data-category="Protection">
+        <div class="product-image">
+          <img src="./slike/spf.jpeg" alt="SPF" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="feather-shield">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Protection</span>
+          <h3>“Feather Shield” SPF 50</h3>
+          <p>No white cast, lightweight, and perfect for daily wear.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Night Care">
+        <div class="product-image">
+          <img src="./slike/retinol.jpeg" alt="Retinol serum" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="reset-retinol">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Night Care</span>
+          <h3>“Reset” Retinol 0.2%</h3>
+          <p>Gently introduces retinoids for smooth, clear skin without irritation.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Balance">
+        <div class="product-image">
+          <img src="./slike/toner.jpeg" alt="Toner" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="rose-dew">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Balance</span>
+          <h3>“Rose Dew” Toner</h3>
+          <p>With hyaluronic acid and rose water for plump, refreshed skin.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Cleanser">
+        <div class="product-image">
+          <img src="./slike/Pure Cleansing Oil.jpeg" alt="Cleansing Oil" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="cloud-gel">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Cleanser</span>
+          <h3>“Velvet Cleanse” Oil</h3>
+          <p>Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Hydration">
+        <div class="product-image">
+          <img src="./slike/cream.jpeg" alt="Hydra Veil Moisturizer" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="hydra-veil">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Hydration</span>
+          <h3>“Hydra Veil” Moisturizer</h3>
+          <p>Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Serums">
+        <div class="product-image">
+          <img src="./slike/serum.jpeg" alt="Radiant Bloom Serum" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="radiant-bloom">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Serums</span>
+          <h3>“Radiant Bloom” Serum</h3>
+          <p>Peptides + ferulic acid to boost collagen and enhance skin’s glow.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Protection">
+        <div class="product-image">
+          <img src="./slike/spf1.jpeg" alt="Luminous Guard SPF 50" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="luminous-guard">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Protection</span>
+          <h3>“Luminous Guard” SPF 50</h3>
+          <p>Broad-spectrum protection with a sheer finish, ideal for all skin tones.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Night Care">
+        <div class="product-image">
+          <img src="./slike/night.jpeg" alt="Night Renew Serum" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="night-renew">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Night Care</span>
+          <h3>“Night Renew” Serum</h3>
+          <p>Bakuchiol + peptides to promote skin renewal and reduce fine lines.</p>
+        </div>
+      </article>
+      <article class="product" data-category="Balance">
+        <div class="product-image">
+          <img src="./slike/crystal.jpeg" alt="Crystal Mist Toner" loading="lazy" />
+          <div class="product-overlay">
+            <button class="quick-view" data-product="crystal-mist">Quick View</button>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag">Balance</span>
+          <h3>“Crystal Mist” Toner</h3>
+          <p>Witch hazel + chamomile to balance and soothe for a refreshed complexion.</p>
+        </div>
+      </article>
         </div>
         <!-- Quick View Modal -->
         <div id="quick-view-modal" class="modal">
@@ -545,6 +530,7 @@
 </body>
 
 </html>
+
 
 
 
