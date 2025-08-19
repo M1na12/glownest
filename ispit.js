@@ -101,7 +101,8 @@ if (backToTop) {
 $(document).ready(function() {
   let $grid = $('.products-grid');
 
-  $grid.slick({
+  // Slick options
+  let slickOptions = {
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: true,
@@ -117,25 +118,30 @@ $(document).ready(function() {
         }
       }
     ]
-  });
+  };
 
+  // Init Slick
+  $grid.slick(slickOptions);
+
+  // Filtering
   $('.filter-btn').on('click', function() {
     let filterValue = $(this).data('filter');
-    $grid.slick('unslick');
 
     if (filterValue === 'all') {
-      $('.product').show();
+      $grid.slick('slickUnfilter'); // show all slides
     } else {
-      $('.product').hide();
-      $('.product[data-category="' + filterValue + '"]').show();
+      $grid.slick('slickUnfilter'); // reset filter first
+      $grid.slick('slickFilter', function() {
+        return $(this).data('category') === filterValue;
+      });
     }
 
-    $grid.slick();
-
+    // Active button styling
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
   });
 });
+
 
 // ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver((entries) => {
@@ -442,3 +448,4 @@ window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 
 });
+
