@@ -354,7 +354,16 @@ h1, h2, h3 {
   transition: all .35s ease;
   opacity: 0;
   animation: fadeUp .8s forwards;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 16px auto;
 }
+
+.product.hide {
+  display: none !important;
+}
+
 
 .product:nth-child(odd) { animation-delay: .12s; }
 .product:nth-child(even) { animation-delay: .24s; }
@@ -1124,6 +1133,7 @@ footer {
     width: 100%;
   }
 }
+
 
 
 
