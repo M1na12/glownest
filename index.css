@@ -239,7 +239,7 @@ h1, h2, h3 {
 
 /* ===== WRAPPER ===== */
 .section {
-  padding: clamp(60px, 8vw, 110px) 1rem;
+  padding: clamp(60px, 8vw, 110px) 2rem;
 }
 
 .container {
@@ -1130,4 +1130,5 @@ footer {
     text-align: center; 
   }
 }
+
 
