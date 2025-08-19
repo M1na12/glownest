@@ -138,7 +138,7 @@ h1, h2, h3 {
   color: #fff;
   text-align: center;
   position: relative;
-  min-height: 100vh;
+  min-height: 97vh;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -1131,6 +1131,7 @@ footer {
     text-align: center; 
   }
 }
+
 
 
 
