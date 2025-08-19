@@ -420,32 +420,39 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const modal = document.getElementById('quick-view-modal');
 const modalContent = document.getElementById('quick-view-content');
 const closeModal = document.querySelector('.modal-close');
-document.querySelectorAll('.quick-view').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const product = btn.dataset.product;
-    const productData = {
-      'cloud-gel': { name: '“Cloud Gel” Face Wash', desc: 'Gently removes impurities without tightness. With betaine & panthenol.' },
-      'silk-barrier': { name: '“Silk Barrier” Cream', desc: 'Niacinamide + ceramides to restore barrier and lock in lasting moisture.' },
-      'morning-glow': { name: '“Morning Glow” Vitamin C', desc: 'Stable 10% formula for an even skin tone and extra radiance.' },
-      'feather-shield': { name: '“Feather Shield” SPF 50', desc: 'No white cast, lightweight, and perfect for daily wear.' },
-      'reset-retinol': { name: '“Reset” Retinol 0.2%', desc: 'Gently introduces retinoids for smooth, clear skin without irritation.' },
-      'rose-dew': { name: '“Rose Dew” Toner', desc: 'With hyaluronic acid and rose water for plump, refreshed skin.' },
-      'cleansing-oil': { name: '“Velvet Cleanse” Oil', desc: 'Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.' },
-      'hydra-veil': { name: '“Hydra Veil” Moisturizer', desc: 'Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.' },
-      'radiant-bloom': { name: '“Radiant Bloom” Serum', desc: 'Peptides + ferulic acid to boost collagen and enhance skin’s glow.' },
-      'luminous-guard': { name: '“Luminous Guard” SPF 50', desc: 'Broad-spectrum protection with a sheer finish, ideal for all skin tones.' },
-      'night-renew': { name: '“Night Renew” Serum', desc: 'Bakuchiol + peptides to promote skin renewal and reduce fine lines.' },
-      'crystal-mist': { name: '“Crystal Mist” Toner', desc: 'Witch hazel + chamomile to balance and soothe for a refreshed complexion.' }
-    };
-    modalContent.innerHTML = `<h3>${productData[product].name}</h3><p>${productData[product].desc}</p>`;
-    modal.style.display = 'flex';
-  });
-});
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-window.addEventListener('click', (e) => {
-  if (e.target === modal) modal.style.display = 'none';
 
-});
+if (modal && modalContent && closeModal) {
+  document.querySelectorAll('.quick-view').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const product = btn.dataset.product;
+      const productData = {
+        'cloud-gel': { name: '“Cloud Gel” Face Wash', desc: 'Gently removes impurities without tightness. With betaine & panthenol.' },
+        'silk-barrier': { name: '“Silk Barrier” Cream', desc: 'Niacinamide + ceramides to restore barrier and lock in lasting moisture.' },
+        'morning-glow': { name: '“Morning Glow” Vitamin C', desc: 'Stable 10% formula for an even skin tone and extra radiance.' },
+        'feather-shield': { name: '“Feather Shield” SPF 50', desc: 'No white cast, lightweight, and perfect for daily wear.' },
+        'reset-retinol': { name: '“Reset” Retinol 0.2%', desc: 'Gently introduces retinoids for smooth, clear skin without irritation.' },
+        'rose-dew': { name: '“Rose Dew” Toner', desc: 'With hyaluronic acid and rose water for plump, refreshed skin.' },
+        'cleansing-oil': { name: '“Velvet Cleanse” Oil', desc: 'Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.' },
+        'hydra-veil': { name: '“Hydra Veil” Moisturizer', desc: 'Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.' },
+        'radiant-bloom': { name: '“Radiant Bloom” Serum', desc: 'Peptides + ferulic acid to boost collagen and enhance skin’s glow.' },
+        'luminous-guard': { name: '“Luminous Guard” SPF 50', desc: 'Broad-spectrum protection with a sheer finish, ideal for all skin tones.' },
+        'night-renew': { name: '“Night Renew” Serum', desc: 'Bakuchiol + peptides to promote skin renewal and reduce fine lines.' },
+        'crystal-mist': { name: '“Crystal Mist” Toner', desc: 'Witch hazel + chamomile to balance and soothe for a refreshed complexion.' }
+      };
+      if (productData[product]) {
+        modalContent.innerHTML = `<h3>${productData[product].name}</h3><p>${productData[product].desc}</p>`;
+        modal.style.display = 'flex';
+      }
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+}
+
 
