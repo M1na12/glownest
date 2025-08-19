@@ -269,6 +269,7 @@ h1, h2, h3 {
 .reveal.visible {
   opacity: 1;
   transform: none;
+  margin-top:70px;
 }
 
 /* ===== ABOUT & ABOUT ME ===== */
@@ -1108,4 +1109,5 @@ footer {
     opacity: 1; 
   }
 }
+
 
