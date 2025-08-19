@@ -266,6 +266,7 @@ h1, h2, h3 {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity .7s ease, transform .7s ease;
+  margin-top:70px;
 }
 
 .reveal.visible {
@@ -1130,6 +1131,7 @@ footer {
     text-align: center; 
   }
 }
+
 
 
 
