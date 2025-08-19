@@ -60,13 +60,13 @@ $('.service-more').click(function() {
   const $card = $(this).closest('.service-card');
   const $details = $card.find('.service-details');
   
-
+  // Close other cards
   $('.service-card').not($card).removeClass('active').find('.service-details').slideUp(400);
   
-
+  // Toggle current card
   $card.toggleClass('active');
   $details.slideToggle(400, function() {
-  
+    // Update aria-expanded after animation completes
     $(this).closest('.service-card').find('.service-more').attr('aria-expanded', $card.hasClass('active'));
   });
 });
@@ -80,7 +80,7 @@ $('.service-more').keydown(function(e) {
 // ===== BACK TO TOP =====
 const backToTop = document.querySelector('.back-to-top');
 if (backToTop) {
-
+  // Show/hide button based on scroll position
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       backToTop.classList.add('visible');
@@ -89,7 +89,7 @@ if (backToTop) {
     }
   });
 
-
+  // Smooth scroll to top on click
   backToTop.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
@@ -97,51 +97,34 @@ if (backToTop) {
     });
   });
 }
-  
-$(document).ready(function() {
-  let $grid = $('.products-grid');
-
-  // Slick options
-  let slickOptions = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-          arrows: false
-        }
-      }
-    ]
-  };
-
-  // Init Slick
-  $grid.slick(slickOptions);
-
-  // Filtering
-  $('.filter-btn').on('click', function() {
-    let filterValue = $(this).data('filter');
-
-    if (filterValue === 'all') {
-      $grid.slick('slickUnfilter'); // show all slides
-    } else {
-      $grid.slick('slickUnfilter'); // reset filter first
-      $grid.slick('slickFilter', function() {
-        return $(this).data('category') === filterValue;
-      });
-    }
-
-    // Active button styling
+  // ===== jQUERY: PRODUCT FILTERS =====
+  $('.filter-btn').click(function() {
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
+    const filter = $(this).data('filter');
+    if (filter === 'all') {
+      $('.product').fadeIn(400);
+    } else {
+      $('.product').each(function() {
+        if ($(this).data('category') === filter) {
+          $(this).fadeIn(400);
+        } else {
+          $(this).fadeOut(400);
+        }
+      });
+    }
   });
-});
 
+  // ===== jQUERY: PRODUCT HOVER EFFECT =====
+  $('.product').hover(
+    function() {
+      $(this).addClass('product-hover');
+    },
+    function() {
+      $(this).removeClass('product-hover');
+    }
+  );
+});
 
 // ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver((entries) => {
@@ -420,39 +403,30 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const modal = document.getElementById('quick-view-modal');
 const modalContent = document.getElementById('quick-view-content');
 const closeModal = document.querySelector('.modal-close');
-
-if (modal && modalContent && closeModal) {
-  document.querySelectorAll('.quick-view').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const product = btn.dataset.product;
-      const productData = {
-        'cloud-gel': { name: '“Cloud Gel” Face Wash', desc: 'Gently removes impurities without tightness. With betaine & panthenol.' },
-        'silk-barrier': { name: '“Silk Barrier” Cream', desc: 'Niacinamide + ceramides to restore barrier and lock in lasting moisture.' },
-        'morning-glow': { name: '“Morning Glow” Vitamin C', desc: 'Stable 10% formula for an even skin tone and extra radiance.' },
-        'feather-shield': { name: '“Feather Shield” SPF 50', desc: 'No white cast, lightweight, and perfect for daily wear.' },
-        'reset-retinol': { name: '“Reset” Retinol 0.2%', desc: 'Gently introduces retinoids for smooth, clear skin without irritation.' },
-        'rose-dew': { name: '“Rose Dew” Toner', desc: 'With hyaluronic acid and rose water for plump, refreshed skin.' },
-        'cleansing-oil': { name: '“Velvet Cleanse” Oil', desc: 'Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.' },
-        'hydra-veil': { name: '“Hydra Veil” Moisturizer', desc: 'Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.' },
-        'radiant-bloom': { name: '“Radiant Bloom” Serum', desc: 'Peptides + ferulic acid to boost collagen and enhance skin’s glow.' },
-        'luminous-guard': { name: '“Luminous Guard” SPF 50', desc: 'Broad-spectrum protection with a sheer finish, ideal for all skin tones.' },
-        'night-renew': { name: '“Night Renew” Serum', desc: 'Bakuchiol + peptides to promote skin renewal and reduce fine lines.' },
-        'crystal-mist': { name: '“Crystal Mist” Toner', desc: 'Witch hazel + chamomile to balance and soothe for a refreshed complexion.' }
-      };
-      if (productData[product]) {
-        modalContent.innerHTML = `<h3>${productData[product].name}</h3><p>${productData[product].desc}</p>`;
-        modal.style.display = 'flex';
-      }
-    });
+document.querySelectorAll('.quick-view').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const product = btn.dataset.product;
+    const productData = {
+      'cloud-gel': { name: '“Cloud Gel” Face Wash', desc: 'Gently removes impurities without tightness. With betaine & panthenol.' },
+      'silk-barrier': { name: '“Silk Barrier” Cream', desc: 'Niacinamide + ceramides to restore barrier and lock in lasting moisture.' },
+      'morning-glow': { name: '“Morning Glow” Vitamin C', desc: 'Stable 10% formula for an even skin tone and extra radiance.' },
+      'feather-shield': { name: '“Feather Shield” SPF 50', desc: 'No white cast, lightweight, and perfect for daily wear.' },
+      'reset-retinol': { name: '“Reset” Retinol 0.2%', desc: 'Gently introduces retinoids for smooth, clear skin without irritation.' },
+      'rose-dew': { name: '“Rose Dew” Toner', desc: 'With hyaluronic acid and rose water for plump, refreshed skin.' },
+      'cleansing-oil': { name: '“Velvet Cleanse” Oil', desc: 'Dissolves makeup and impurities while nourishing skin. With jojoba & squalane.' },
+      'hydra-veil': { name: '“Hydra Veil” Moisturizer', desc: 'Hyaluronic acid + aloe vera for deep hydration and a plump, dewy finish.' },
+      'radiant-bloom': { name: '“Radiant Bloom” Serum', desc: 'Peptides + ferulic acid to boost collagen and enhance skin’s glow.' },
+      'luminous-guard': { name: '“Luminous Guard” SPF 50', desc: 'Broad-spectrum protection with a sheer finish, ideal for all skin tones.' },
+      'night-renew': { name: '“Night Renew” Serum', desc: 'Bakuchiol + peptides to promote skin renewal and reduce fine lines.' },
+      'crystal-mist': { name: '“Crystal Mist” Toner', desc: 'Witch hazel + chamomile to balance and soothe for a refreshed complexion.' }
+    };
+    modalContent.innerHTML = `<h3>${productData[product].name}</h3><p>${productData[product].desc}</p>`;
+    modal.style.display = 'flex';
   });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
-}
-
-
+});
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+window.addEventListener('click', (e) => {
+  if (e.target === modal) modal.style.display = 'none';
+});
