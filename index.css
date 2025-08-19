@@ -339,7 +339,8 @@ h1, h2, h3 {
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(14px, 2vw, 22px);
+  gap: 22px;
+  margin-top: 40px; /* Dodaj razmak posle hero */
 }
 
 .product {
@@ -1082,32 +1083,27 @@ footer {
 
 @media only screen and (max-width: 480px) {
   .products-grid {
-    display: grid !important; 
-    grid-template-columns: 1fr; 
-    gap: 16px; 
-    width: 100%; 
-    margin: 16px auto; 
-    padding: 0 16px; 
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+    margin: 16px auto;
+    padding: 0 16px;
   }
 
   .product {
-    display: block !important; 
+    display: block !important;
     width: 100%;
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
   }
 
   .product-image img {
     width: 100%;
-    height: 250px; 
+    height: 250px;
     object-fit: cover;
-
-  .product-overlay {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    opacity: 1; 
   }
 }
+
 
 
