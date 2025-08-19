@@ -102,17 +102,18 @@ if (backToTop) {
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
     const filter = $(this).data('filter');
-    if (filter === 'all') {
-      $('.product').fadeIn(400);
+   if (filter === 'all') {
+  $('.product').css('display', 'grid');
+} else {
+  $('.product').each(function() {
+    if ($(this).data('category') === filter) {
+      $(this).css('display', 'grid');
     } else {
-      $('.product').each(function() {
-        if ($(this).data('category') === filter) {
-          $(this).fadeIn(400);
-        } else {
-          $(this).fadeOut(400);
-        }
-      });
+      $(this).css('display', 'none');
     }
+  });
+}
+
   });
 
   // ===== jQUERY: PRODUCT HOVER EFFECT =====
@@ -430,3 +431,4 @@ closeModal.addEventListener('click', () => {
 window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
