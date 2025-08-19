@@ -101,7 +101,6 @@ if (backToTop) {
 $(document).ready(function() {
   let $grid = $('.products-grid');
 
-  // Inicijalizacija Slick Carousel
   $grid.slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -120,10 +119,9 @@ $(document).ready(function() {
     ]
   });
 
-  // Filtriranje proizvoda
   $('.filter-btn').on('click', function() {
     let filterValue = $(this).data('filter');
-    $grid.slick('unslick'); // Ukloni Slick pre filtriranja
+    $grid.slick('unslick');
 
     if (filterValue === 'all') {
       $('.product').show();
@@ -132,7 +130,7 @@ $(document).ready(function() {
       $('.product[data-category="' + filterValue + '"]').show();
     }
 
-    $grid.slick(); // Ponovo inicijalizuj Slick sa filtriranim elementima
+    $grid.slick();
 
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
@@ -444,4 +442,3 @@ window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 
 });
-
