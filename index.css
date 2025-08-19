@@ -142,6 +142,7 @@ h1, h2, h3 {
   display: grid;
   place-items: center;
   overflow: hidden;
+  width:100%;
 }
 
 .hero::before {
@@ -1109,4 +1110,5 @@ footer {
     font-size: 1rem;
   }
 }
+
 
