@@ -1113,7 +1113,7 @@ footer {
 
 @media only screen and (max-width: 480px) {
   .hero {
-    background-image: url('./slike/hero-bg.jpg');
+    background-image: url(./slike/background.jpeg);
     background-size: cover !important; 
     background-position: center !important; 
     background-repeat: no-repeat; 
@@ -1130,5 +1130,6 @@ footer {
     text-align: center; 
   }
 }
+
 
 
