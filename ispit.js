@@ -60,13 +60,13 @@ $('.service-more').click(function() {
   const $card = $(this).closest('.service-card');
   const $details = $card.find('.service-details');
   
-  // Close other cards
+
   $('.service-card').not($card).removeClass('active').find('.service-details').slideUp(400);
   
-  // Toggle current card
+
   $card.toggleClass('active');
   $details.slideToggle(400, function() {
-    // Update aria-expanded after animation completes
+  
     $(this).closest('.service-card').find('.service-more').attr('aria-expanded', $card.hasClass('active'));
   });
 });
@@ -80,7 +80,7 @@ $('.service-more').keydown(function(e) {
 // ===== BACK TO TOP =====
 const backToTop = document.querySelector('.back-to-top');
 if (backToTop) {
-  // Show/hide button based on scroll position
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       backToTop.classList.add('visible');
@@ -89,7 +89,7 @@ if (backToTop) {
     }
   });
 
-  // Smooth scroll to top on click
+
   backToTop.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
@@ -97,25 +97,25 @@ if (backToTop) {
     });
   });
 }
-  // ===== jQUERY: PRODUCT FILTERS =====
-  $('.filter-btn').click(function() {
+$(document).ready(function() {
+  
+  $('.filter-btn').on('click', function() {
+    let filterValue = $(this).data('filter');
+
+    if (filterValue === 'all') {
+      $('.product').show(); 
+    } else {
+      $('.product').hide(); 
+      $('.product[data-category="' + filterValue + '"]').show(); 
+    }
+
+ 
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
-    const filter = $(this).data('filter');
-    if (filter === 'all') {
-      $('.product').fadeIn(400);
-    } else {
-      $('.product').each(function() {
-        if ($(this).data('category') === filter) {
-          $(this).fadeIn(400);
-        } else {
-          $(this).fadeOut(400);
-        }
-      });
-    }
   });
+});
 
-  // ===== jQUERY: PRODUCT HOVER EFFECT =====
+
   $('.product').hover(
     function() {
       $(this).addClass('product-hover');
@@ -429,4 +429,5 @@ closeModal.addEventListener('click', () => {
 });
 window.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
+
 });
