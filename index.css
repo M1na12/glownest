@@ -130,7 +130,7 @@ h1, h2, h3 {
 
 /* ===== HERO ===== */
 .hero {
- background-image: url('./slike/background.jpeg');
+  background-image: url('./slike/background.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -138,11 +138,10 @@ h1, h2, h3 {
   color: #fff;
   text-align: center;
   position: relative;
-  min-height: 600px; 
+  min-height: 100vh;
   display: grid;
   place-items: center;
   overflow: hidden;
-  width: 100%;
 }
 
 .hero::before {
@@ -239,7 +238,7 @@ h1, h2, h3 {
 
 /* ===== WRAPPER ===== */
 .section {
-  padding: clamp(60px, 8vw, 110px) 2rem;
+  padding: clamp(60px, 8vw, 110px) 1rem;
 }
 
 .container {
@@ -266,7 +265,6 @@ h1, h2, h3 {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity .7s ease, transform .7s ease;
-  margin-top:70px;
 }
 
 .reveal.visible {
@@ -354,16 +352,7 @@ h1, h2, h3 {
   transition: all .35s ease;
   opacity: 0;
   animation: fadeUp .8s forwards;
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 16px auto;
 }
-
-.product.hide {
-  display: none !important;
-}
-
 
 .product:nth-child(odd) { animation-delay: .12s; }
 .product:nth-child(even) { animation-delay: .24s; }
@@ -1079,37 +1068,7 @@ footer {
   text-align: center;
   animation: fadeIn 0.4s ease;
 }
-/* Responsive za mobilne uređaje */
-@media only screen and (max-width: 480px) {
-  .products-grid {
-    display: grid !important; 
-    grid-template-columns: 1fr; 
-    gap: 16px;
-    width: 100%; 
-    margin: 16px auto;
-    padding: 0 16px; 
-  }
 
-  .product {
-    display: block !important; 
-    width: 100%;
-    max-width: 100%;
-    height: auto; 
-  }
-
-  .product-image img {
-    width: 100%;
-    height: auto; 
-    object-fit: cover; 
-  }
-
-  .product-overlay {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    opacity: 1; 
-  }
-}
 
 @media (max-width: 640px) {
   .quiz-card {
@@ -1120,25 +1079,3 @@ footer {
     font-size: 1rem;
   }
 }
-
-@media only screen and (max-width: 480px) {
- .hero {
-    background-size: cover !important;
-    height: 400px; 
-    padding: 16px;
-  }
-
-  .hero-inner {
-    padding: 0;
-    width: 100%;
-  }
-}
-
-
-
-
-
-
-
-
-
