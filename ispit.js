@@ -98,23 +98,21 @@ if (backToTop) {
   });
 }
   // ===== jQUERY: PRODUCT FILTERS =====
-  $('.filter-btn').click(function() {
+ // Product filtering
+$(document).on('click', '.filter-btn', function () {
+    const filter = $(this).data('filter');
+
+    // Update active button
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
-    const filter = $(this).data('filter');
-   if (filter === 'all') {
-  $('.product').css('display', 'grid');
-} else {
-  $('.product').each(function() {
-    if ($(this).data('category') === filter) {
-      $(this).css('display', 'grid');
-    } else {
-      $(this).css('display', 'none');
-    }
-  });
-}
 
-  });
+    if (filter === 'all') {
+        $('.product').show();
+    } else {
+        $('.product').hide();
+        $('.product[data-category="' + filter + '"]').show();
+    }
+});
 
   // ===== jQUERY: PRODUCT HOVER EFFECT =====
   $('.product').hover(
@@ -433,3 +431,108 @@ window.addEventListener('click', (e) => {
 });
 
 
+
+
+// ===== WISHLIST =====
+let wishlist = JSON.parse(localStorage.getItem('glownest-wishlist') || '[]');
+
+const productImages = {
+  'cloud-gel':      './slike/cleasinggel.jpeg',
+  'silk-barrier':   './slike/moisturizer.jpeg',
+  'morning-glow':   './slike/vitaminc.jpeg',
+  'feather-shield': './slike/spf.jpeg',
+  'reset-retinol':  './slike/retinol.jpeg',
+  'rose-dew':       './slike/toner.jpeg',
+  'cleansing-oil':  './slike/Pure Cleansing Oil.jpeg',
+  'hydra-veil':     './slike/cream.jpeg',
+  'radiant-bloom':  './slike/serum.jpeg',
+  'luminous-guard': './slike/spf1.jpeg',
+  'night-renew':    './slike/night.jpeg',
+  'crystal-mist':   './slike/crystal.jpeg'
+};
+
+const productNames = {
+  'cloud-gel':      '"Cloud Gel" Face Wash',
+  'silk-barrier':   '"Silk Barrier" Cream',
+  'morning-glow':   '"Morning Glow" Vitamin C',
+  'feather-shield': '"Feather Shield" SPF 50',
+  'reset-retinol':  '"Reset" Retinol 0.2%',
+  'rose-dew':       '"Rose Dew" Toner',
+  'cleansing-oil':  '"Velvet Cleanse" Oil',
+  'hydra-veil':     '"Hydra Veil" Moisturizer',
+  'radiant-bloom':  '"Radiant Bloom" Serum',
+  'luminous-guard': '"Luminous Guard" SPF 50',
+  'night-renew':    '"Night Renew" Serum',
+  'crystal-mist':   '"Crystal Mist" Toner'
+};
+
+function updateWishlistButtons() {
+  document.querySelectorAll('.wishlist-btn').forEach(btn => {
+    const product = btn.dataset.product;
+    const isWished = wishlist.includes(product);
+    btn.textContent = isWished ? '\u{1F497}' : '\u{1F90D}';
+    btn.title = isWished ? 'Remove from wishlist' : 'Add to wishlist';
+    btn.setAttribute('aria-pressed', String(isWished));
+  });
+  const badge = document.getElementById('wishlist-count');
+  if (badge) {
+    badge.textContent = wishlist.length;
+    badge.style.display = wishlist.length > 0 ? 'flex' : 'none';
+  }
+}
+
+function renderWishlistPanel() {
+  const list = document.getElementById('wishlist-items');
+  if (!list) return;
+  if (wishlist.length === 0) {
+    list.innerHTML = '<p class="wishlist-empty">No saved items yet.<br>Click \u{1F90D} on any product!</p>';
+    return;
+  }
+  list.innerHTML = wishlist.map(id => {
+    const img = productImages[id] || '';
+    const name = productNames[id] || id;
+    return `<div class="wishlist-item">
+      <img src="${img}" alt="${name}" />
+      <span>${name}</span>
+      <button class="wishlist-remove" data-product="${id}" aria-label="Remove">\u2715</button>
+    </div>`;
+  }).join('');
+  list.querySelectorAll('.wishlist-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wishlist = wishlist.filter(p => p !== btn.dataset.product);
+      localStorage.setItem('glownest-wishlist', JSON.stringify(wishlist));
+      updateWishlistButtons();
+      renderWishlistPanel();
+    });
+  });
+}
+
+$(document).on('click', '.wishlist-btn', function (e) {
+  e.stopPropagation();
+  const product = $(this).data('product');
+  if (wishlist.includes(product)) {
+    wishlist = wishlist.filter(p => p !== product);
+  } else {
+    wishlist.push(product);
+  }
+  localStorage.setItem('glownest-wishlist', JSON.stringify(wishlist));
+  updateWishlistButtons();
+});
+
+$(document).on('click', '#wishlist-icon', function () {
+  const panel = $('#wishlist-panel');
+  panel.toggleClass('open');
+  if (panel.hasClass('open')) renderWishlistPanel();
+});
+
+$(document).on('click', '#wishlist-close', function () {
+  $('#wishlist-panel').removeClass('open');
+});
+
+$(document).on('click', function (e) {
+  if (!$(e.target).closest('#wishlist-panel, #wishlist-icon').length) {
+    $('#wishlist-panel').removeClass('open');
+  }
+});
+
+updateWishlistButtons();
